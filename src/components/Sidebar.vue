@@ -1,10 +1,17 @@
 <template>
   <v-navigation-drawer v-model="drawer" app>
-    <v-sheet color="grey lighten-4" class="pa-4">
-      <v-avatar class="mb-4" color="grey darken-1" size="64"></v-avatar>
-
-      <div>john@vuetifyjs.com</div>
-    </v-sheet>
+    <div class="pa-4 grey darken-1 ">
+      <div class="text-center mt-4">
+        <v-avatar
+          class="mb-4"
+          color="grey darken-1"
+          size="64"
+        >
+          <v-img aspect-ratio="30" src="../assets/images/tuat.png" />
+        </v-avatar>
+        <h2 class="white--text" >Dr(a). Wanessa Campos </h2>
+      </div>
+    </div>
 
     <v-divider></v-divider>
 
