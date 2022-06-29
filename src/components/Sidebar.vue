@@ -9,7 +9,7 @@
         >
           <v-img aspect-ratio="30" src="../assets/images/tuat.png" />
         </v-avatar>
-        <h2 class="white--text" >Dr(a). Wanessa Campos </h2>
+        <h5 class="white--text" >Dr(a). Wanessa Campos </h5>
       </div>
     </div>
 
@@ -31,6 +31,7 @@
 
 <script>
 export default {
+  props:['drawer'],
   name: 'Sidebar',
 
   data: () => ({
