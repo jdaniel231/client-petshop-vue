@@ -4,6 +4,7 @@
     :items="desserts"
     sort-by="calories"
     class="elevation-1"
+    :search="search"
   >
     <template v-slot:top>
       <v-toolbar
@@ -16,6 +17,14 @@
           vertical
         ></v-divider>
         <v-spacer></v-spacer>
+
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Pesquisar"
+          single-line
+          hide-details
+        ></v-text-field>
 
         <template>
           <v-btn

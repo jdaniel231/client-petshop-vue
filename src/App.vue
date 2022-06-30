@@ -18,7 +18,7 @@ import Header from './components/Header.vue';
 import Sidebar from './components/Sidebar.vue';
   export default {
     data: () => ({
-      cards: ["Today", "Yesterday"],
+      // cards: ["Today", "Yesterday"],
       drawer: true,
     }),
     components: { Header, Sidebar }
