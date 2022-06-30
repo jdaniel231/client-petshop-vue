@@ -5,7 +5,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-  
+  {
+    path: '/',
+    name: 'Dashboard',
+    component: () => import('../views/dashboard/Dashboard')
+  },
+  {
+    path: '/customers',
+    name: 'Customers',
+    component:  () => import('../views/customers/Customers')
+  }
 ]
 
 const router = new VueRouter({
