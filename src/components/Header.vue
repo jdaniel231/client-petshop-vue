@@ -11,31 +11,31 @@
       </v-form>
 
     </v-col>
-
-    <v-toolbar-title>Title</v-toolbar-title>
-
+    
     <v-spacer></v-spacer>
 
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-span  v-bind="attrs"
+        <v-btn 
+          v-bind="attrs"
           v-on="on"
-          style="cursor: pointer"
-          class="mx-5 mx-10"
+          icon
+          class="mx-5 mx-10 "
         >          
           <v-icon>mdi-cog-outline</v-icon> 
-        </v-span>
+        </v-btn>
       </template>
       <v-list width="250" class="py-0">
         <v-list-item two-line >
           <v-list-item-content>
-            <v-list-item-title>Dr(a)Wanessa Campos</v-list-item-title>
+            <v-list-item-title class="text-center">Dr(a)Wanessa Campos</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
+          link
         >
           <v-list-item-icon>
             <v-icon>{{item.icon}}</v-icon>
