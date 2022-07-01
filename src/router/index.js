@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,7 +14,12 @@ const routes = [
   {
     path: '/customers',
     name: 'Customers',
-    component:  () => import('../views/customers/Customers')
+    component:  () => import('../views/customers/Index')
+  },
+  {
+    path: '/customers/new',
+    name: 'NewClient',
+    component:  () => import('../views/customers/New')
   }
 ]
 

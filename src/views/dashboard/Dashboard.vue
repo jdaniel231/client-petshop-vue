@@ -1,11 +1,15 @@
 <template>
   <div class="dashboard">
-    <v-subheader class="py-0 d-flex justify-space-between rounded-lg">
-      <h3>Dashboard</h3>
-      <!-- <v-btn color="primary" class="rounded-lg">
-        <v-icon>mdi-book-plus</v-icon>
-      </v-btn> -->
-    </v-subheader>
+    <v-breadcrumbs :items="items">
+      <template v-slot:item="{ item }">
+        <v-breadcrumbs-item
+          :href="item.href"
+          :disabled="item.disabled"
+        >
+          {{ item.text.toUpperCase() }}
+        </v-breadcrumbs-item>
+      </template>
+    </v-breadcrumbs>
     <br>
     <v-row>
       <v-col>
@@ -84,7 +88,19 @@
 import List from './List.vue';
 export default {
     name: "Dashboard",
-    components: { List }
+    components: { 
+      List 
+    },
+
+    data: () => ({
+      items: [
+        {
+          text: 'Dashboard',
+          disabled: true,
+          href: '/',
+        },
+      ],
+    }),
 }
 </script>
 
