@@ -32,10 +32,9 @@
             dark
             icon
             class="mb-2"
-            v-bind="attrs"
-            v-on="on"
+            @click="newClient"
           >
-            <v-icon>mdi-plus</v-icon>
+           <v-icon>mdi-plus</v-icon>
           </v-btn>
           </template>
 
@@ -46,7 +45,12 @@
 
 <script>
 export default {
-  name: 'List'
+  name: 'ListCustomers',
+  methods: {
+     newClient() {
+      this.$router.push("/customers/new");
+    },
+  }
 }
 </script>
 

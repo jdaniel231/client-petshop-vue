@@ -5,12 +5,12 @@
 
     <v-spacer />
 
-    <v-col lg="6" cols="12">
+    <!-- <v-col lg="6" cols="12">
       <v-form class="mt-5">
         <v-text-field rounded outlined dense placeholder="Pesquisar..." append-icon="mdi-magnify" />
       </v-form>
 
-    </v-col>
+    </v-col> -->
     
     <v-spacer></v-spacer>
 
