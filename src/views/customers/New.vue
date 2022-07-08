@@ -7,20 +7,27 @@
         </v-breadcrumbs-item>
       </template>
     </v-breadcrumbs>
-
+    <br>
     <v-card >
-      <v-app-bar color="blue lighten-5">
-        <v-icon class="icon-title">mdi-account-plus-outline</v-icon>
+      <v-app-bar>
         <v-toolbar-title>Cadastro</v-toolbar-title>
 
         <v-spacer></v-spacer>
          
-        <v-btn icon>
-          <v-icon>mdi-content-save</v-icon>
-        </v-btn>
-         <v-btn icon @click="back">
-          <v-icon>mdi-keyboard-return</v-icon>
-        </v-btn>
+         <v-btn
+            color="cyan"
+            class="mr-0"
+          >
+            Salvar
+          </v-btn>
+        
+          <v-btn
+            color="cyan"
+            class="ml-2"
+            @click="back"
+          >
+            Cancelar
+          </v-btn>
 
       </v-app-bar>
       <v-container
@@ -65,8 +72,8 @@ export default {
     components: { Form },
     methods: {
       back: function() {
-      this.$router.push("/customers");
-    },
+        this.$router.push("/customers");
+      },
     }
 }
 </script>
