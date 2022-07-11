@@ -7,14 +7,33 @@
         </v-breadcrumbs-item>
       </template>
     </v-breadcrumbs>
-  
-    <List />
+    <br>
+    <v-row>
+      <v-col lg=12>
+        <v-card>
+          <v-app-bar>
+              <v-toolbar-title>Clientes</v-toolbar-title>
+
+              <v-spacer></v-spacer>
+              
+              <v-btn 
+                icon
+                class="mb-2"
+                @click="newClient"
+              >
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+          </v-app-bar>           
+          <List />        
+        </v-card>
+      </v-col>
+    </v-row>
 
   </div>
 </template>
 
 <script>
-import List from './List.vue';
+import List from '../../components/customers/List.vue';
 export default {
   name: "Customers",
   data: () => ({
@@ -31,7 +50,12 @@ export default {
       },
     ],
   }),
-  components: { List }
+  components: { List },
+  methods: {
+     newClient() {
+      this.$router.push("/customers/new");
+    },
+  }  
 }
 </script>
 

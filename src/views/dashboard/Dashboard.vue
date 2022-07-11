@@ -18,7 +18,18 @@
     </v-row>
     <v-row>
       <v-col lg=12>
-        <List />
+        <v-card>
+          <v-app-bar>
+              <v-toolbar-title>Lista de atendimentos</v-toolbar-title>
+
+              <v-spacer></v-spacer>
+              
+              <v-btn icon>
+                <v-icon>mdi-plus</v-icon>
+              </v-btn>
+          </v-app-bar>
+          <List />
+        </v-card>
       </v-col>
     </v-row>
   </div>

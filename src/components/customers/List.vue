@@ -10,12 +10,6 @@
       <v-toolbar
         flat
       >
-        <v-toolbar-title>Lista de atendimentos</v-toolbar-title>
-        <v-divider
-          class="mx-4"
-          inset
-          vertical
-        ></v-divider>
         <v-spacer></v-spacer>
 
         <v-text-field
@@ -25,19 +19,6 @@
           single-line
           hide-details
         ></v-text-field>
-
-        <template>
-          <v-btn
-            color="primary"
-            dark
-            icon
-            class="mb-2"
-            @click="newClient"
-          >
-           <v-icon>mdi-plus</v-icon>
-          </v-btn>
-          </template>
-
         </v-toolbar>
         </template>
   </v-data-table>

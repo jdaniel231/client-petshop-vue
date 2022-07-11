@@ -27,19 +27,6 @@
           cols="12"
           class="text-right"
         >
-          <v-btn
-            color="success"
-            class="mr-0"
-          >
-            Salvar
-          </v-btn>
-        
-          <v-btn
-            color="success"
-            class="ml-2"
-          >
-            Voltar
-          </v-btn>
         </v-col>
 
       </v-row>
