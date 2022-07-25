@@ -34,6 +34,11 @@
 
 <script>
 import List from '../../components/customers/List.vue';
+// import Customer from '../../api/customers'
+import { Factory } from '../../api/factory';
+
+const CustomerApi = Factory.get("customers")
+
 export default {
   name: "Customers",
   data: () => ({
@@ -52,22 +57,22 @@ export default {
     ],
   }),
   components: { List },
+  mounted() {
+    this.list()
+  },
   methods: {
     newClient() {
       this.$router.push("/customers/new");
     },
-    fetchCustomers() {
-      this.$http.get("http://localhost:3000/api/v1/customers")
-        .then(response => {
-          console.log(response)
-          this.customers = response.data
-        })
-        .catch(err => console.log(err.response))
-    }
+    list(){
+      CustomerApi.list({}).then(response => {
+        this.customers = response.data
+      }).catch(err => {
+        console.log(err.response)
+      })
+    },
   },
-  mounted() {
-    this.fetchCustomers()
-  },
+ 
 }
 </script>
 
