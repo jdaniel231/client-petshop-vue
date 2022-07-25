@@ -24,7 +24,7 @@
                 <v-icon>mdi-plus</v-icon>
               </v-btn>
           </v-app-bar>           
-          <List />        
+          <List :customers="customers" />        
         </v-card>
       </v-col>
     </v-row>
@@ -37,6 +37,7 @@ import List from '../../components/customers/List.vue';
 export default {
   name: "Customers",
   data: () => ({
+    customers: [],
     items: [
       {
         text: "Dashboard",
@@ -52,10 +53,21 @@ export default {
   }),
   components: { List },
   methods: {
-     newClient() {
+    newClient() {
       this.$router.push("/customers/new");
     },
-  }  
+    fetchCustomers() {
+      this.$http.get("http://localhost:3000/api/v1/customers")
+        .then(response => {
+          console.log(response)
+          this.customers = response.data
+        })
+        .catch(err => console.log(err.response))
+    }
+  },
+  mounted() {
+    this.fetchCustomers()
+  },
 }
 </script>
 
