@@ -5,7 +5,7 @@
         v-for="(fearture, index) in feartures"
         :key="index" 
       >
-        <v-card elevation="2" class="rounded-lg">
+        <v-card elevation="2" color="grey lighten-1" class="rounded-lg">
           <v-card-text class="d-flex justify-space-between align-center">
             <div>
               <strong>{{ fearture.title }}</strong><br>
@@ -34,7 +34,7 @@ export default {
     feartures: [
       {title: 'Atendimentos', icon: 'mdi-hospital-box', count: '190', color: 'red darken-4' },
       {title: 'Clientes', icon: ' mdi-account', count: '190', color: 'blue darken-4' },
-      {title: 'Comissão', icon: ' mdi-currency-brl', count: '190', color: 'green darken-4' },
+      {title: 'Comissão', icon: ' mdi-currency-brl', count: 'R$ 14.000', color: 'green darken-4' },
     ]
   })
 
