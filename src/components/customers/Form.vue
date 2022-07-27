@@ -1,43 +1,44 @@
 <template>
-  <v-form>
-    <v-container class="py-0" >
+  <v-card height="450">
+    <v-card-text>
       <v-row>
-        <v-col cols="12" md="4">
-          <v-text-field 
+        <v-col cols="6" >
+          <v-text-field
+            v-model="customer.name"
             label="Nome"
-          />
+            outlined
+            dense
+          ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
-          <v-text-field 
-            label="CPF"
-          />
+        <v-col cols="6" >
+          <v-text-field
+            v-model="customer.phone"
+            label="Telefone"
+            outlined
+            dense
+          ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
-          <v-text-field 
-            label="telefone"
-          />
+        <v-col cols="6" >
+          <v-text-field
+            v-model="customer.address"
+            label="Endreço"
+            outlined
+            dense
+          ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
-          <v-text-field 
-            label="Endereço"
-          />
-        </v-col>
-
-        <v-col
-          cols="12"
-          class="text-right"
-        >
-        </v-col>
-
       </v-row>
-    </v-container>
-  </v-form>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
 export default {
-
-
+  props: {
+    customer: {
+      type: Object,
+      required: true,
+    }
+  },
 }
 </script>
 

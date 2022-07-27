@@ -57,7 +57,7 @@ export default {
     ],
   }),
   components: { List },
-  mounted() {
+  created: function() {
     this.list()
   },
   methods: {
