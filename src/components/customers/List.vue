@@ -16,7 +16,7 @@
             <v-btn small color="primary" class="mx-3">
               <v-icon> mdi-pencil </v-icon>
             </v-btn>
-             <v-btn small color="primary" class="mx-3">
+             <v-btn small color="primary" class="mx-3" @click="remove(item.id)">
               <v-icon> mdi-delete </v-icon>
             </v-btn>
           </td>
@@ -27,13 +27,14 @@
 </template>
 
 <script>
+
 export default {
   name: 'ListCustomers',
   props: {
     customers: Array,
   },
   methods: {
-     newClient() {
+    newClient() {
       this.$router.push("/customers/new");
     },
   }

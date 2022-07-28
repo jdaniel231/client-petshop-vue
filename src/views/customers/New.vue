@@ -8,38 +8,37 @@
       </template>
     </v-breadcrumbs>
     <br>
-    <v-card >
+    <v-card min-height="450px" >
       <v-app-bar>
-        <v-toolbar-title>Cadastro</v-toolbar-title>
+        <v-toolbar-title>
+          <span>Cadastro</span>
+        </v-toolbar-title>
 
         <v-spacer></v-spacer>
          
          <v-btn
-            color="cyan"
-            class="mr-0"
+            icon
+            @click="save"
           >
-            Salvar
+            <v-icon>
+              mdi-content-save
+            </v-icon>
           </v-btn>
-        
           <v-btn
-            color="cyan"
-            class="ml-2"
+            icon
             @click="back"
           >
-            Cancelar
+            <v-icon>
+              mdi-arrow-u-left-bottom
+            </v-icon>
           </v-btn>
+      </v-app-bar>      
+      <v-row>
+        <v-col>
+          <Form :customer="customer" />
+        </v-col>
+      </v-row>
 
-      </v-app-bar>
-      <v-container
-        fluid
-        tag="section"
-      >
-        <v-row justify="center">
-          <v-col cols="12" md="8">
-            <Form :client="client" />
-          </v-col>
-        </v-row>
-      </v-container>
     </v-card>
     
   </div>
@@ -47,11 +46,15 @@
 
 <script>
 import Form from "../../components/customers/Form.vue";
+import { Factory } from '../../api/factory';
+
+const CustomerApi = Factory.get("customers")
+
 
 export default {
     name: "NewClient",
     data: () => ({
-        client: {},
+        customer: {},
         items: [
             {
                 text: "Dashboard",
@@ -69,8 +72,16 @@ export default {
             }
         ],
     }),
-    components: { Form },
+    components: { 
+      Form 
+    },
     methods: {
+      save: function() {
+        CustomerApi.save(this.customer).then(response => {
+          this.customer.id = response.data.id;
+          this.back();
+        });
+      },
       back: function() {
         this.$router.push("/customers");
       },

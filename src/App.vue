@@ -1,5 +1,8 @@
 <template>
-  <v-app id="inspire">
+  <v-app 
+    id="inspire"
+     :style="{ background: $vuetify.theme.themes.dark.background }"
+  >
     <Header @handleDrawer="drawer = !drawer" />
     <Sidebar :drawer="drawer" />
     <v-main>

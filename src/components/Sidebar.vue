@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer v-model="drawer" dark app class="black" width="100" >
+  <v-navigation-drawer v-model="drawer" dark app class="grey lighten-1" width="100" >
     <div class="text-center mt-5">
       <v-btn fab color="white" x-large>
         <v-icon color="black" >mdi-dog</v-icon>
@@ -35,9 +35,7 @@
 
 <script>
 export default {
-  props:{
-    drawer: Boolean,
-  },
+  props:['drawer'],
   name: 'Sidebar',
 
   data: () => ({
@@ -54,7 +52,7 @@ export default {
 <style>
 .border  {
    
-    background: #fff ;
+    background: #F5F6FA ;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
       text-decoration: none;
@@ -67,7 +65,7 @@ export default {
     top: -20px;
     height: 20px;
     width: 83%;
-    background: #fff;
+    background: #BDBDBD;
   
     display: none; 
 }
@@ -80,7 +78,7 @@ export default {
     width: 100%;
     height: 100%;
     border-bottom-right-radius: 20px;
-    background: black;
+    background: #BDBDBD;
 }
 .border b:nth-child(2)
 {
@@ -88,7 +86,7 @@ export default {
     bottom: -20px;
     height: 20px;
     width: 83%;
-    background: #fff;
+    background: #BDBDBD;
     display: none;
 }
 .border b:nth-child(2)::before
@@ -100,7 +98,7 @@ export default {
     width: 100%;
     height: 100%;
     border-top-right-radius: 20px;
-    background: black;
+    background: #BDBDBD;
 }
 .border b:nth-child(1),
 .border b:nth-child(2)
