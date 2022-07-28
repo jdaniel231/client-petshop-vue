@@ -78,9 +78,8 @@ export default {
     methods: {
       save: function() {
         CustomerApi.save(this.customer).then(response => {
-          if (response.status === 200) {
-            this.back();
-          }
+          this.customer.id = response.data.id;
+          this.back();
         });
       },
       back: function() {
