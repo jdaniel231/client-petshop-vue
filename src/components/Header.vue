@@ -1,9 +1,9 @@
 <template>
-  <v-app-bar app color="rgba(0,0,0,0)" flat>
+  <v-app-bar app color="#F5F6FA" elevate-on-scroll elevation="4">
    <v-app-bar-nav-icon @click="$emit('handleDrawer')"></v-app-bar-nav-icon>
 
     <v-text-field
-      label="Pesquiasr..."
+      label="Pesquisar..."
       class="pt-5"
       filled
       prepend-inner-icon="mdi-magnify"
