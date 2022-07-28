@@ -21,7 +21,7 @@
         <v-col cols="6" >
           <v-text-field
             v-model="customer.address"
-            label="Endreço"
+            label="Endereço"
             outlined
             dense
           ></v-text-field>
