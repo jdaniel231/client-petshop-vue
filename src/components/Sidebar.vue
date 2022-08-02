@@ -43,7 +43,7 @@ export default {
     links: [
       ["mdi-view-dashboard-outline", "Dashboard", "/"],
       ["mdi-account", "Clientes", "/customers"],
-      ["mdi-hospital-box", "Consulta"],
+      ["mdi-hospital-box", "Consulta", '/attendances'],
     ],
   })
 }

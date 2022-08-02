@@ -1,7 +1,9 @@
 import customers from './customers'
+import attendances from './attendances'
 
 const repositories = {
-  customers: customers
+  customers: customers,
+  attendances: attendances
 } 
 
 export const Factory = {
