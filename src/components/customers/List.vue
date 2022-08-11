@@ -13,7 +13,7 @@
           <td class="text-center">{{ item.name }}</td>
           <td class="text-center">{{ item.phone }}</td>
           <td class="text-center">
-            <v-btn small icon class="mx-3">
+            <v-btn small icon class="mx-3" @click="edit(item.id)">
               <v-icon> mdi-pencil </v-icon>
             </v-btn>
              <v-btn small icon class="mx-3" @click="remove(item.id)">
@@ -48,6 +48,9 @@ export default {
           this.list()
         })
       }
+    },
+    edit: function(id){
+      this.$router.push(`/customers/${id}/edit`);
     },
     list(){
       CustomerApi.list({}).then(response => {

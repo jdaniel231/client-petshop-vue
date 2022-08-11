@@ -20,6 +20,11 @@ const routes = [
     component:  () => import('../views/customers/New')
   },
   {
+    path: '/customers/:id/edit',
+    name: 'EditClient',
+    component:  () => import('../views/customers/Edit')
+  },
+  {
     path: '/attendances',
     name: 'Attendances',
     component:  () => import('../views/attendances/Index')

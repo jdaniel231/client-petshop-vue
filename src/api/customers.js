@@ -6,7 +6,7 @@ export default {
   list:() => {
     return config.get(`${resource}`)
   },
-  get(id){
+  getId(id){
     return config.get(`${resource}/${id}`)
   },
   save:(data) => {

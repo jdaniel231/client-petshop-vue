@@ -8,25 +8,31 @@
       </template>
     </v-breadcrumbs>
     <br>
-    <v-card min-height="450px">
+    <v-card min-height="450px" >
       <v-app-bar>
         <v-toolbar-title>
-          <span>Cadastro</span>
+          <span>Editar</span>
         </v-toolbar-title>
 
         <v-spacer></v-spacer>
-
-        <v-btn icon @click="save">
-          <v-icon>
-            mdi-content-save
-          </v-icon>
-        </v-btn>
-        <v-btn icon @click="back">
-          <v-icon>
-            mdi-arrow-u-left-bottom
-          </v-icon>
-        </v-btn>
-      </v-app-bar>
+         
+         <v-btn
+            icon
+            @click="save"
+          >
+            <v-icon>
+              mdi-content-save
+            </v-icon>
+          </v-btn>
+          <v-btn
+            icon
+            @click="back"
+          >
+            <v-icon>
+              mdi-arrow-u-left-bottom
+            </v-icon>
+          </v-btn>
+      </v-app-bar>      
       <v-row>
         <v-col>
           <Form :customer="customer" />
@@ -34,7 +40,7 @@
       </v-row>
 
     </v-card>
-
+    
   </div>
 </template>
 
@@ -44,9 +50,8 @@ import { Factory } from '../../api/factory';
 
 const CustomerApi = Factory.get("customers")
 
-
 export default {
-  name: "NewClient",
+  name: 'EditClient',
   data: () => ({
     customer: {},
     items: [
@@ -61,30 +66,33 @@ export default {
         href: "/customers",
       },
       {
-        text: "Novo",
+        text: "Editar",
         disabled: false,
       }
     ],
   }),
-  components: {
-    Form
-  },
+  components: { Form },
+  created: function() {
+    this.listId();
+  },  
   methods: {
-    save: function () {
-      CustomerApi.save(this.customer).then(response => {
+    listId: function() {
+      let id = this.$route.params.id
+      CustomerApi.getId(id).then(response => {
+        this.customer = response.data;
+      }).catch(err => {
+        console.log(err.response)
+      })
+    },
+    save: function() {
+      CustomerApi.update(this.customer.id, this.customer).then((response )=> {
         this.customer.id = response.data.id;
         this.back();
       });
     },
-    back: function () {
+    back: function() {
       this.$router.push("/customers");
     },
   }
 }
 </script>
-
-<style scoped>
-.icon-title {
-  padding: 0 15px;
-}
-</style>
