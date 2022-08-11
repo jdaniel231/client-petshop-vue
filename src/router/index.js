@@ -18,7 +18,12 @@ const routes = [
     path: '/customers/new',
     name: 'NewClient',
     component:  () => import('../views/customers/New')
-  }
+  },
+  {
+    path: '/attendances',
+    name: 'Attendances',
+    component:  () => import('../views/attendances/Index')
+  },
 ]
 
 const router = new VueRouter({
